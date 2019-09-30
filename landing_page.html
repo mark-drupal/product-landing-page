@@ -1,14 +1,212 @@
 <html>
 
-  <--!This is a landing page based on the tutorial found on the freecodecamp
+  <!--This is a landing page based on the tutorial found on the freecodecamp
   project pages.  You view the project requirements here:
   https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page
   -->
 
-  <head>
-  </head>
+
+
+  <style>
+
+    /*
+    *  This is where all the CSS for the entire webpage will be defined
+    */
+
+    /*User story 1 - define an ID for the header element*/
+
+    #header{
+      /*User Story 13 - keeps this part of the web page visiable*/
+      position: fixed;
+
+      /*Use of flex box*/
+      display: flex;
+      direction: column;
+    }
+
+    /* User Story 2 - the image in the header (company logo) */
+    #header-img{
+
+    }
+
+    /*User Story 3 - the nav element */
+    #nav-bar{
+
+    }
+
+    /*User Story 4 - the nav links*/
+    .nav-link{
+
+    }
+
+
+    /*User Story 7 - Form*/
+    #form{
+
+    }
+    /*User story 8 - the email text box*/
+    #email{
+
+    }
+
+    #email-label{
+
+    }
+
+    /*User Story 11 - submit button*/
+    #submit{
+
+    }
+
+    #video{
+
+    }
+
+    #how-it-works{
+
+    }
+
+    #features{
+
+    }
+
+    .icon{
+
+    }
+
+    .description{
+
+    }
+
+    #pricing{
+
+    }
+
+    #level{
+
+    }
+
+    /*User Story #14 - the media query - in this case for phones*/
+
+    @media(max-width: 500px) {
+
+    }
+
+  </style>
+
+    <!--User story 1 - define an ID for the header element-->
+    <head>
+
+    </head>
 
   <body>
+
+    <!--This is the script for testing the project -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <header id=header>
+      <!-- User Story 2 - the image in the header (company logo)-->
+      <div>
+        <img id="header-img" alt="Original Tronbones" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png">
+      </div>
+
+      <!-- User Story 3 - the nav element -->
+      <nav id="nav-bar">
+
+        <!-- User Story 4 - the nav links-->
+        <div >
+          <!-- User story 5 - link to take you to the features page-->
+          <a class="nav-link" href="#features">Features</a>
+        </div>
+        <div>
+          <!-- User story 5 - link to take you to the how it works page-->
+          <a class="nav-link" href="#how-it-works">How it works</a>
+        </div>
+        <div>
+          <!-- User story 5 - links to take you to the pricing part-->
+          <a class="nav-link" href="#pricing">Pricing</a>
+        </div>
+      </nav>
+    </header>
+
+
+
+    <!-- User story7 - the form with an id of form -->
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+
+      <!--User story 8 - the email text box-->
+      <label for="email" id="email-label">
+        <!-- User Story #11 - place holder text has been added -->
+        Email:<input type="email" id="email" placeholder="Type your email address here..." required name="email">
+      </label>
+
+      <!-- User Story 11 - submit button -->
+
+      <input type="submit" id="submit">
+
+    </form>
+
+    <!--Features part of the website-->
+    <div id="features">
+        <!-- quality materials-->
+        <div class="icon">
+          <img src="https://image.flaticon.com/icons/svg/2038/2038729.svg" alt"Premium Materials Icon - an image taken from here:  https://www.flaticon.com/free-icon/authentic_2038729">
+        </div>
+        <div clas="description">
+          <h2>Premium Materials</h2>
+          <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.<p>
+        </div>
+        <!-- fast shipping-->
+        <div class="icon">
+          <img src="https://image.flaticon.com/icons/svg/2039/2039065.svg" alt="Picture of a truck - we offer fast shipping.  This image was taken from here: https://www.flaticon.com/free-icon/shipping_2038875"
+        </div>
+        <div clas="description">
+          <h2>Fast Shipping</h2>
+          <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+        </div>
+        <!--Quality assurance-->
+        <div class="icon">
+          <img src="https://image.flaticon.com/icons/svg/2038/2038835.svg" alt="High Quality icon - taken from here https://image.flaticon.com/icons/svg/2038/2038835.svg">
+        </div>
+        <div clas="description">
+          <h2>Quality Assurance</h2>
+          <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+        </div>
+    </div>
+    <div id="how-it-works">
+      <!--user story 6 - the video -->
+      <video width="320" height="240" controls id="video">
+        <source src="https://youtu.be/y8Yv4pnO7qc" type="video/mp4">
+            Your browser does not support the video tag.
+      </video>
+    </div>
+    <!--Pricing part of the webpage-->
+    <div id ="pricing">
+      <div class="level">
+        <p>Tenor Trombone</p>
+      </div>
+        <h2>$600</h2>
+        <li>Lorem ipsum.</li>
+      <div>
+
+      </div>
+      <div class="level">
+        <p>Bass Trombone</p>
+      </div>
+      <div>
+        <h2>$900</h2>
+        <p>Lorem ipsum.</p>
+      </div>
+
+      <div class="level">
+        <p>Valve Trombone</p>
+      </div>
+      <div>
+        <h2>$1200</h2>
+        <p>Lorem ipsum.</p>
+      </div>
+    </div>
+
   </body>
 
 
