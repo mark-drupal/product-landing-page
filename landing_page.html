@@ -5,44 +5,209 @@
   https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page
   -->
 
-
-
   <style>
 
     /*
     *  This is where all the CSS for the entire webpage will be defined
     */
 
-    /*User story 1 - define an ID for the header element*/
 
+    /********************************************************************
+    *     Optimised for +500px displays
+    *********************************************************************
+
+    #container{
+      /*set a background color*/
+      background-color: #EDF6F7;
+
+      /*max width*/
+      max-width: 1400px;
+      /*Uses the full width of the screen - no margin*/
+      margin: 0;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   The container will hold the entire page
+      */
+      display: flex;
+      /*Flex-direction - Select Direction - in this case column so that everything flows down the page */
+      flex-direction: column;
+      /*try and fit every flex item onto the page*/
+      flex-wrap: nowrap;
+      /*Justify the content (flex items) to the start of the flex-boxes*/
+      justify-content: flex-start;
+      /*Align flex items around the center of the cross axis*/
+      align-items: center;
+      /*Align all the flex items centrally*/
+      Align-content: center;
+    }
+    /*User story 1 - define an ID for the header element*/
     #header{
+      /*set a border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
+
       /*User Story 13 - keeps this part of the web page visiable*/
       position: fixed;
 
-      /*Use of flex box*/
+      /*set a background color*/
+      background-color: #A5D2D9;
+
+      /*set the width*/
+      width: 100%;
+
+      /*
+      *   Flex Item settings
+      *
+      *   This item is held in the main #container
+      */
+      /*Define the factor by which the item(s) should grow by*/
+      flex-grow: 1;
+      /*Define the factor by which flex item(s) should shrink by*/
+      flex-shrink 1;
+      /*Define the factor that the flex item(s) should use in terms of space before its distributed*/
+      flex-basis: 100%;
+      /*Ensure all items are aligned centrally*/
+      align-self: center;
+
+      /*
+      *   Flex Box settings
+      *
+      *   This container will hold the #nav-bar and the #header-img
+      */
+      /*Turn on flex box - this holds the #navbar #header-img*/
       display: flex;
-      direction: column;
-    }
-
-    /* User Story 2 - the image in the header (company logo) */
-    #header-img{
-
+      /*Flex Direction to row - this lays out the <header> in rows*/
+      flex-direction: row;
+      /*Try and fit everything onto one line*/
+      flex-wrap: nowrap;
+      /*Justify the content so that it distributes the space between the flex boxes*/
+      justify-content: space-between;
+      /*It looks nicer if the items are aligned centrally*/
+      align-items:  center;
+      /*Align content with extra space spare in the cross axis - ideally we want it to look central*/
+      Align-content: center;
     }
 
     /*User Story 3 - the nav element */
     #nav-bar{
+      /*set some margins and padding*/
+      margin:10px;
+      padding: 20px;
 
+      /*
+      *   Flex Item settings
+      *
+      *   The #nav bar is and item in the #header container
+      */
+
+      /*Define the factor by which the nav bar grows by*/
+      flex-grow: 1;
+      /*define the factor by which the nav bar shrinks by*/
+      flex-shrink 1;
+      /*Define how much space it uses - half of the header!*/
+      flex-basis: 50%;
+      /*ensure that it lines up centrally*/
+      align-self: center;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   This container hold the #nav-links
+      */
+      /*Turn on flex box - this holds the #nav-links*/
+      display: flex;
+      /*Ideally we want these to be displayed in rows*/
+      flex-direction: row;
+      /*Try and fit everything on one line*/
+      flex-wrap: nowrap;
+      /*Justify the content so that it distributes the space between the flex boxes*/
+      justify-content: center;
+      /*Looks better if the items line up from the start of the box*/
+      align-items: flex-start;
+      /*Looks better if the content lines up from the start of the box*/
+        Align-content: flex-start;
+    }
+
+    /* User Story 2 - the image in the header (company logo) */
+    #header-img{
+      /*set a height and width % for the logo - 50% looks a good scale*/
+      width: 50%;
+      height: 50%;
+
+      /*
+      *   Flex Item Settings
+      *
+      *   This item is held in the #header container
+      */
+      /*set the factor by which the image grows by*/
+      flex-grow: 1;
+      /*set the factor by which the image shrinks by*/
+      flex-shrink 1;
+      /*Decide how much space it should take up*/
+      flex-basis: 30%;
+      /*Align near the start of the flex box - over rides the container setting*/
+      align-self: flex-start;
     }
 
     /*User Story 4 - the nav links*/
     .nav-link{
+      /*set a bckground colour for the link buttons*/
+      background-color: #F6EBE9;
+      /*padding*/
+      padding: 10px 10px 10px 10px;
+      /*border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
 
+      /*
+      *   Flex Item settings
+      *
+      *   This item is held in the #nav-bar container
+      */
+      /*Define the factor by which the nav-link grows by*/
+      flex-grow: 1;
+      /*Define the factor by which the nav-link shrinks by*/
+      flex-shrink 1;
+      /*Define the factor of how much space it takes up*/
+      flex-basis: 50%;
+      /*Over ride where it sits - at the end or right of the screen*/
+      align-self:end;
     }
-
 
     /*User Story 7 - Form*/
     #form{
+      /*set a background color in keeping with the theme*/
+      background-color: #F6EBE9;
+      /*border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
+      /*margin/padding*/
+      margin: 10px;
+      padding: 10px;
+      /*add a top margin to keep it below the banner*/
+      margin-top: 100px;
 
+      /*
+      *   Flex Item settings
+      *
+      *   This item is held in the main #container
+      */
+      /*Define the factory by which the form grows by*/
+      flex-grow: 1;
+      /*Define the factor by which the form shrinks by*/
+      flex-shrink 1;
+      /*define the default size of the form*/
+      flex-basis: 20%;
+      /*align it centrally*/
+      align-self: center;
     }
     /*User story 8 - the email text box*/
     #email{
@@ -60,36 +225,260 @@
 
     #video{
 
+      /*
+      *This holds the iframe for the youtube video
+      *
+      *This item is held in the #how-it-works container (flexbox)
+      */
+
     }
 
-    #how-it-works{
+  /*This is a containter for video*/
+  #how-it-works{
+      /*Define a background in keeping with the theme*/
+      background-color: #F6EBE9;
+      /*set a border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
+      /*set a margin*/
+      margin: 20px;
+      padding: 20px;
 
+      /*
+      *   Flex Item Settings
+      *
+      *   This item is held in the main #container
+      */
+      /*define a factor by which the container grows by*/
+      flex-grow: 1;
+      /*define a factor by which the video shrinks by*/
+      flex-shrink 1;
+      /*define the default size of the container before space is distributed to the rest of the main container*/
+      flex-basis: 20%;
+      /*Ensure the alignment is central*/
+      align-self: center;
     }
 
     #features{
+      /*Set a background in keeping with the theme*/
+      background-color: #F6EBE9;
+      /*set a border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
+      /*set a marin and some padding*/
+      margin: 10px;
+      padding: 10px;
 
+      /*
+      *   Flex Item settings
+      *
+      *   This item is held in the main #container
+      */
+      /*define a factor for growth*/
+      flex-grow: 1;
+      /*Define a factor for the item to shrink by*/
+      flex-shrink 1;
+      /*Define the amount of space this container takes up before space is distributed*/
+      flex-basis: 100%;
+      /*Ensure it aligns centrally*/
+      align-self: center;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   This flex box hold the #row items
+      */
+      /*make the maths easier!*/
+      box-sizing: border-box;
+      /*Turn on flex box*/
+      display: flex;
+      /*Set to columns looks nicer*/
+      flex-direction: column;
+      /*try and get everything onto one line*/
+      flex-wrap: nowrap;
+      /*ensure that the flex items are at the start of the available space*/
+      justify-content: flex-start;
+      /*ensure that the flex items start at the start of the available cross axis space*/
+      align-items: flex-start;
+      /*Ensure fully that the flex items start at the beginning of the space available */
+      Align-content: flex-start;
+    }
+
+    .row{
+      /*Ensure we are using 100% of the space in the container*/
+      width: 100%;
+      height: 100%;
+
+      /*
+      *   Flex Item Settings
+      *
+      *   These items are held in the #features container
+      */
+      /*define a growth factor*/
+      flex-grow: 1;
+      /*define a shrink factor*/
+      flex-shrink 1;
+      /*define how much space to use up before distrubing space thats left*/
+      flex-basis: 100%;
+      /*Ensure that each row begins at the start of the container*/
+      align-self: flex-start;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   This container holds the #icon and the #description flex items
+      */
+      /*Turn on flex*/
+      display: flex;
+      /*set Direction to row*/
+      flex-direction: row;
+      /*try and fit everything onto one line*/
+      flex-wrap: nowrap;
+      /*space evenly within the container*/
+      justify-content: space-evenly;
+      /*align all flex items centrally*/
+      align-items:  center;
+      /*align the content overall centrally*/
+      align-content: center;
     }
 
     .icon{
+      /*scale the icons so that they are good size*/
+      width: 150px;
+      height: 150px;
 
+      /*
+      *   Flex Item Settings
+      *
+      *   These items are held in the #row container
+      */
+
+      /*set a factor by which the icons grow by*/
+      flex-grow: 1;
+      /*set a factor by which the icons shrink by*/
+      flex-shrink 1;
+      /*define the amnount of space used by the item before the rest of the space is distributed*/
+      flex-basis: 30%;
+      /*Ensure the items fill the container*/
+      align-self: stretch;
     }
 
     .description{
+      /*set a margin and some padding*/
+      margin: 10px;
+      padding: 10px;
 
+      /*set a max width and height so that its looks nice*/
+      max-width: 400px;
+      max-height: 400px;
+
+      /*
+      * Flex Item Settings
+      *
+      *   These items are held in the #row container
+      */
+      /*set a growth factor*/
+      flex-grow: 1;
+      /*set a shrink factor*/
+      flex-shrink 1;
+      /*define how much space the item uses before distrubing the remaining space*/
+      flex-basis: 20%;
+      /*Ensure that the items start at the beginning of the space available*/
+      align-self: flex-start;
     }
 
     #pricing{
 
+      /*set a margin and some padding*/
+      margin: 10px;
+      padding: 10px;
+
+      /*
+      *   Flex Item settings
+      *
+      *   These items are held in the main #container
+      */
+      /*set a growth factor*/
+      flex-grow: 1;
+      /*set a shrink factor*/
+      flex-shrink 1;
+      /*define how much space to use before distrubing the remaining space*/
+      flex-basis: 100%;
+      /*Ensure that #pricing begins at the start of the space*/
+      align-self: flex-start;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   This container holds the #level flex items
+      */
+      /*turn flex box on*/
+      display: flex;
+      /*Ensure direction of flow is a row*/
+      flex-direction: row;
+      /*ensure that the wrapping is set so that when the space runs out a new row is started*/
+      flex-wrap: wrap;
+      /*Justify content with space available*/
+      justify-content: space-between;
+      /*align all flex items in the center of the container*/
+      align-items:  center;
+      /*ensure the content is aligned in the center of the container*/
+      Align-content: center;
     }
 
-    #level{
+    .level{
+      /*define a background colour*/
+      background-color: #F6EBE9;
+      /*border*/
+      border: 3px;
+      border-style: solid;
+      border-color: #D9ADA5;
+      border-radius: 20px;
+      /*margin*/
+      margin: 10px;
+      padding: 10px;
 
+      /*
+      *   Flex Item settings
+      *
+      *   These items are held by the #pricing container
+      */
+      /*define a growth factor*/
+      flex-grow: 1;
+      /*define a shrinnk factor*/
+      flex-shrink 1;
+      /*define how much space to use up before distrubuting the remaining space*/
+      flex-basis: 100%;
+      /*Ensure central alignment for this item*/
+      align-self: center;
+
+      /*
+      *   Flex Box Settings
+      *
+      *   This container holds some content - see the html
+      */
+      /*Turn on flex*/
+      display: flex;
+      /*ensure flow is a column*/
+      flex-direction: column;
+      /*Try and fit everything on one line*/
+      flex-wrap: nowrap;
+      /*Justify items spacing evenely*/
+      justify-content: space-evenly;
+      /*Align all items in the container centrally*/
+      align-items:  center;
+      /*Align all content in the container centrally*/
+      Align-content: center;
     }
 
     /*User Story #14 - the media query - in this case for phones*/
 
     @media(max-width: 500px) {
-
+      
     }
 
   </style>
@@ -103,18 +492,17 @@
 
     <!--This is the script for testing the project -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-
+    <div id="container">
     <header id=header>
       <!-- User Story 2 - the image in the header (company logo)-->
       <div>
-        <img id="header-img" alt="Original Tronbones" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png">
-      </div>
-
+  			<img id="header-img" alt="Original Tronbones" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png">
+  		</div>
       <!-- User Story 3 - the nav element -->
       <nav id="nav-bar">
 
-        <!-- User Story 4 - the nav links-->
-        <div >
+		     <!-- User Story 4 - the nav links-->
+         <div >
           <!-- User story 5 - link to take you to the features page-->
           <a class="nav-link" href="#features">Features</a>
         </div>
@@ -132,6 +520,7 @@
 
 
     <!-- User story7 - the form with an id of form -->
+
     <form id="form" action="https://www.freecodecamp.com/email-submit">
 
       <!--User story 8 - the email text box-->
@@ -146,68 +535,70 @@
 
     </form>
 
+    <div>
     <!--Features part of the website-->
     <div id="features">
         <!-- quality materials-->
-        <div class="icon">
-          <img src="https://image.flaticon.com/icons/svg/2038/2038729.svg" alt"Premium Materials Icon - an image taken from here:  https://www.flaticon.com/free-icon/authentic_2038729">
+        <div class="row">
+          <div>
+            <img class="icon" src="https://image.flaticon.com/icons/svg/2038/2038729.svg" alt="Premium Materials Icon-image taken from here:  https://www.flaticon.com/free-icon/authentic_2038729">
+          </div>
+          <div class="description">
+            <h2>Premium Materials</h2>
+            <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.<p>
+          </div>
         </div>
-        <div clas="description">
-          <h2>Premium Materials</h2>
-          <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.<p>
-        </div>
+      </div>
+      <div id="features">
         <!-- fast shipping-->
-        <div class="icon">
-          <img src="https://image.flaticon.com/icons/svg/2039/2039065.svg" alt="Picture of a truck - we offer fast shipping.  This image was taken from here: https://www.flaticon.com/free-icon/shipping_2038875"
+        <div class="row">
+          <img class="icon" src="https://image.flaticon.com/icons/svg/2038/2038875.svg" alt="Picture of a truck - we offer fast shipping.  This image was taken from here: https://www.flaticon.com/free-icon/shipping_2038875">
+          <div class="description">
+            <h2>Fast Shipping</h2>
+            <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
+          </div>
         </div>
-        <div clas="description">
-          <h2>Fast Shipping</h2>
-          <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.</p>
-        </div>
+      </div>
+      <div id="features">
         <!--Quality assurance-->
-        <div class="icon">
-          <img src="https://image.flaticon.com/icons/svg/2038/2038835.svg" alt="High Quality icon - taken from here https://image.flaticon.com/icons/svg/2038/2038835.svg">
+        <div class="row">
+          <img class="icon" src="https://image.flaticon.com/icons/svg/2038/2038835.svg" alt="High Quality icon - taken from here https://image.flaticon.com/icons/svg/2038/2038835.svg">
+          <div class="description">
+            <h2>Quality Assurance</h2>
+            <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
+          </div>
         </div>
-        <div clas="description">
-          <h2>Quality Assurance</h2>
-          <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.</p>
-        </div>
-    </div>
+      </div>
+      <div>
+
+    <!--Video-->
     <div id="how-it-works">
       <!--user story 6 - the video -->
-      <video width="320" height="240" controls id="video">
-        <source src="https://youtu.be/y8Yv4pnO7qc" type="video/mp4">
-            Your browser does not support the video tag.
-      </video>
-    </div>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          <h1> How it works</h1>
+        </iframe>
+      </div>
+
     <!--Pricing part of the webpage-->
     <div id ="pricing">
       <div class="level">
         <p>Tenor Trombone</p>
-      </div>
         <h2>$600</h2>
         <li>Lorem ipsum.</li>
-      <div>
-
       </div>
+
       <div class="level">
         <p>Bass Trombone</p>
-      </div>
-      <div>
         <h2>$900</h2>
         <p>Lorem ipsum.</p>
       </div>
 
       <div class="level">
         <p>Valve Trombone</p>
-      </div>
-      <div>
         <h2>$1200</h2>
         <p>Lorem ipsum.</p>
       </div>
     </div>
-
+  </div>
   </body>
-
-
 </html>
