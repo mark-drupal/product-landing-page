@@ -13,8 +13,8 @@
 
 
     /********************************************************************
-    *     Optimised for +500px displays
-    *********************************************************************
+    *     Optimised for +800px displays
+    *********************************************************************/
 
     #container{
       /*set a background color*/
@@ -34,7 +34,7 @@
       /*Flex-direction - Select Direction - in this case column so that everything flows down the page */
       flex-direction: column;
       /*try and fit every flex item onto the page*/
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       /*Justify the content (flex items) to the start of the flex-boxes*/
       justify-content: flex-start;
       /*Align flex items around the center of the cross axis*/
@@ -54,10 +54,11 @@
       position: fixed;
 
       /*set a background color*/
-      background-color: #A5D2D9;
+      background-color: #C3E1EA;
 
       /*set the width*/
       width: 100%;
+      height: auto;
 
       /*
       *   Flex Item settings
@@ -109,7 +110,7 @@
       /*define the factor by which the nav bar shrinks by*/
       flex-shrink 1;
       /*Define how much space it uses - half of the header!*/
-      flex-basis: 50%;
+      flex-basis: 100%;
       /*ensure that it lines up centrally*/
       align-self: center;
 
@@ -123,7 +124,7 @@
       /*Ideally we want these to be displayed in rows*/
       flex-direction: row;
       /*Try and fit everything on one line*/
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       /*Justify the content so that it distributes the space between the flex boxes*/
       justify-content: center;
       /*Looks better if the items line up from the start of the box*/
@@ -146,7 +147,7 @@
       /*set the factor by which the image grows by*/
       flex-grow: 1;
       /*set the factor by which the image shrinks by*/
-      flex-shrink 1;
+      flex-shrink 2;
       /*Decide how much space it should take up*/
       flex-basis: 30%;
       /*Align near the start of the flex box - over rides the container setting*/
@@ -156,14 +157,14 @@
     /*User Story 4 - the nav links*/
     .nav-link{
       /*set a bckground colour for the link buttons*/
-      background-color: #F6EBE9;
+      background-color: #E1EAC3;
       /*padding*/
       padding: 10px 10px 10px 10px;
-      /*border*/
-      border: 3px;
-      border-style: solid;
-      border-color: #D9ADA5;
-      border-radius: 20px;
+
+      /*set a border*/
+      border-radius: 10px;
+      border-style: double;
+      border-color:#D9ADA5;
 
       /*
       *   Flex Item settings
@@ -220,7 +221,10 @@
 
     /*User Story 11 - submit button*/
     #submit{
-
+      background-color: #A5E9DB;
+      border-radius: 10px;
+      border-style: double;
+      border-color:#D9ADA5;
     }
 
     #video{
@@ -230,6 +234,10 @@
       *
       *This item is held in the #how-it-works container (flexbox)
       */
+
+      /*define a height and width*/
+      width: 560;
+      height: 315;
 
     }
 
@@ -475,10 +483,487 @@
       Align-content: center;
     }
 
-    /*User Story #14 - the media query - in this case for phones*/
+    /******************************************************************
+    *
+    *     Mobile CSS optimisation
+    *
+    *User Story #14 - the media query - in this case for phones
+    *******************************************************************/
 
-    @media(max-width: 500px) {
-      
+    @media(max-width: 800px) {
+      #container{
+        /*set a background color*/
+        background-color: #EDF6F7;
+
+        /*max width*/
+        max-width: auto;
+        /*Uses the full width of the screen - no margin*/
+        margin: 0;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   The container will hold the entire page
+        */
+        display: flex;
+        /*Flex-direction - Select Direction - in this case column so that everything flows down the page */
+        flex-direction: column;
+        /*wrap items onto new lines if required*/
+        flex-wrap: wrap;
+        /*Justify the content (flex items) to the start of the flex-boxes*/
+        justify-content: flex-start;
+        /*Align flex items around the center of the cross axis*/
+        align-items: center;
+        /*Align all the flex items centrally*/
+        Align-content: center;
+      }
+      /*User story 1 - define an ID for the header element*/
+      #header{
+        max-height: auto;
+
+        /*set a border*/
+        border: 3px;
+        border-style: solid;
+        border-color: #D9ADA5;
+        border-radius: 20px;
+
+        /*User Story 13 - keeps this part of the web page visiable*/
+        position: fixed;
+
+        /*set a background color*/
+        background-color: #A5D2D9;
+
+        /*set the width*/
+        width: 100%;
+
+        /*
+        *   Flex Item settings
+        *
+        *   This item is held in the main #container
+        */
+        /*Define the factor by which the item(s) should grow by*/
+        flex-grow: 1;
+        /*Define the factor by which flex item(s) should shrink by*/
+        flex-shrink 1;
+        /*Define the factor that the flex item(s) should use in terms of space before its distributed*/
+        flex-basis: 90%;
+        /*Ensure all items are aligned centrally*/
+        align-self: center;
+
+        /*
+        *   Flex Box settings
+        *
+        *   This container will hold the #nav-bar and the #header-img
+        */
+        /*Turn on flex box - this holds the #navbar #header-img*/
+        display: flex;
+        /*Flex Direction to column for smaller screens*/
+        flex-direction: column;
+        /*move items onto new columns if needed*/
+        flex-wrap: wrap;
+        /*Justify the content so that it distributes the space between the flex boxes*/
+        justify-content: space-between;
+        /*It looks nicer if the items are aligned centrally*/
+        align-items:  center;
+        /*Align content with extra space spare in the cross axis - ideally we want it to look central*/
+        Align-content: center;
+      }
+
+      /*User Story 3 - the nav element */
+      #nav-bar{
+        /*set some margins and padding  - reduce for smaller than 500px*/
+        margin:5px;
+        padding: 10px;
+
+        /*
+        *   Flex Item settings
+        *
+        *   The #nav bar is and item in the #header container
+        */
+
+        /*Define the factor by which the nav bar grows by*/
+        flex-grow: 1;
+        /*define the factor by which the nav bar shrinks by*/
+        flex-shrink 1;
+        /*Define how much space it uses - half of the header!*/
+        flex-basis: 100%;
+        /*ensure that it lines up centrally*/
+        align-self: center;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   This container hold the #nav-links
+        */
+        /*Turn on flex box - this holds the #nav-links*/
+        display: flex;
+        /*Ideally we want these to be displayed in rows*/
+        flex-direction: row;
+        /*Try and fit everything on one line*/
+        flex-wrap: wrap;
+        /*Justify the content so that it distributes the space between the flex boxes*/
+        justify-content: space-around;
+        /*Looks better if the items line up from the start of the box*/
+        align-items: flex-start;
+        /*Looks better if the content lines up from the start of the box*/
+          Align-content: flex-start;
+      }
+
+      /* User Story 2 - the image in the header (company logo) */
+      #header-img{
+        /*set a height and width % for the logo - 50% looks a good scale*/
+        width: 90%;
+        height: 90%;
+
+        /*
+        *   Flex Item Settings
+        *
+        *   This item is held in the #header container
+        */
+        /*set the factor by which the image grows by*/
+        flex-grow: 1;
+        /*set the factor by which the image shrinks by*/
+        flex-shrink 1;
+        /*Decide how much space it should take up*/
+        flex-basis: 50%;
+        /*Align near the start of the flex box - over rides the container setting*/
+        align-self: flex-start;
+      }
+
+      /*User Story 4 - the nav links*/
+      .nav-link{
+        /*set a bckground colour for the link buttons*/
+        background-color: #E1EAC3;
+        /*padding*/
+        padding: 10px 10px 10px 10px;
+
+        /*set a border*/
+        border-radius: 10px;
+        border-style: double;
+        border-color:#D9ADA5;
+
+        /*
+        *   Flex Item settings
+        *
+        *   This item is held in the #nav-bar container
+        */
+        /*Define the factor by which the nav-link grows by*/
+        flex-grow: 1;
+        /*Define the factor by which the nav-link shrinks by*/
+        flex-shrink 1;
+        /*Define the factor of how much space it takes up*/
+        flex-basis: 100%;
+        /*Over ride where it sits - at the end or right of the screen*/
+        align-self:center;
+      }
+
+      /*User Story 7 - Form*/
+      #form{
+        /*set a background color in keeping with the theme*/
+        background-color: #F6EBE9;
+        /*border*/
+        border: 3px;
+        border-style: solid;
+        border-color: #D9ADA5;
+        border-radius: 20px;
+        /*margin/padding*/
+        margin: 10px;
+        padding: 10px;
+        /*add a top margin to keep it below the banner*/
+        margin-top: 100px;
+
+        /*
+        *   Flex Item settings
+        *
+        *   This item is held in the main #container
+        */
+        /*Define the factory by which the form grows by*/
+        flex-grow: 1;
+        /*Define the factor by which the form shrinks by*/
+        flex-shrink 1;
+        /*define the default size of the form*/
+        flex-basis: 20%;
+        /*align it centrally*/
+        align-self: center;
+      }
+      /*User story 8 - the email text box*/
+      #email{
+
+      }
+
+      #email-label{
+
+      }
+
+      /*User Story 11 - submit button*/
+      #submit{
+        padding: 10px;
+        margin: 10px;
+      }
+
+      #video{
+
+        /*
+        *This holds the iframe for the youtube video
+        *
+        *This item is held in the #how-it-works container (flexbox)
+        */
+
+        /*define a height and width for less than 500px*/
+        width: auto;
+        height: auto;
+        align-self: center;
+
+      }
+
+    /*This is a containter for video*/
+    #how-it-works{
+        /*set a max width for less than 500px*/
+        max-width: auto;
+        /*Define a background in keeping with the theme*/
+        background-color: #F6EBE9;
+        /*set a border*/
+        border: 3px;
+        border-style: solid;
+        border-color: #D9ADA5;
+        border-radius: 20px;
+        /*set a margin - reduce for less than 500px*/
+        margin: 10px;
+        padding: 10px;
+
+        /*
+        *   Flex Item Settings
+        *
+        *   This item is held in the main #container
+        */
+        /*define a factor by which the container grows by*/
+        flex-grow: 1;
+        /*define a factor by which the video shrinks by*/
+        flex-shrink 1;
+        /*define the default size of the container before space is distributed to the rest of the main container*/
+        flex-basis: 100%;
+        /*Ensure the alignment is central*/
+        align-self: center;
+      }
+
+      #features{
+        /*set a max width for less than 500px*/
+        max-width: auto;
+
+        /*Set a background in keeping with the theme*/
+        background-color: #F6EBE9;
+        /*set a border*/
+        border: 3px;
+        border-style: solid;
+        border-color: #D9ADA5;
+        border-radius: 20px;
+        /*set a marin and some padding*/
+        margin: 10px;
+        padding: 10px;
+
+        /*
+        *   Flex Item settings
+        *
+        *   This item is held in the main #container
+        */
+        /*define a factor for growth*/
+        flex-grow: 1;
+        /*Define a factor for the item to shrink by*/
+        flex-shrink 1;
+        /*Define the amount of space this container takes up before space is distributed*/
+        flex-basis: 100%;
+        /*Ensure it aligns centrally*/
+        align-self: center;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   This flex box hold the #row items
+        */
+        /*make the maths easier!*/
+        box-sizing: border-box;
+        /*Turn on flex box*/
+        display: flex;
+        /*Set to columns looks nicer*/
+        flex-direction: column;
+        /*try and get everything onto one line*/
+        flex-wrap: nowrap;
+        /*ensure that the flex items are at the start of the available space*/
+        justify-content: flex-start;
+        /*ensure that the flex items start at the start of the available cross axis space*/
+        align-items: flex-start;
+        /*Ensure fully that the flex items start at the beginning of the space available */
+        Align-content: flex-start;
+      }
+
+      .row{
+        /*Ensure we are using 100% of the space in the container*/
+        width: 100%;
+        height: 100%;
+
+        /*
+        *   Flex Item Settings
+        *
+        *   These items are held in the #features container
+        */
+        /*define a growth factor*/
+        flex-grow: 1;
+        /*define a shrink factor*/
+        flex-shrink 1;
+        /*define how much space to use up before distrubing space thats left*/
+        flex-basis: 100%;
+        /*Ensure that each row begins at the start of the container*/
+        align-self: flex-start;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   This container holds the #icon and the #description flex items
+        */
+        /*Turn on flex*/
+        display: flex;
+        /*set Direction to row*/
+        flex-direction: row;
+        /*try and fit everything onto one line*/
+        flex-wrap: nowrap;
+        /*space evenly within the container*/
+        justify-content: space-evenly;
+        /*align all flex items centrally*/
+        align-items:  center;
+        /*align the content overall centrally*/
+        align-content: center;
+      }
+
+      .icon{
+        /*scale the icons so that they are good size*/
+        width: 150px;
+        height: 150px;
+
+        /*
+        *   Flex Item Settings
+        *
+        *   These items are held in the #row container
+        */
+
+        /*set a factor by which the icons grow by*/
+        flex-grow: 1;
+        /*set a factor by which the icons shrink by*/
+        flex-shrink 1;
+        /*define the amnount of space used by the item before the rest of the space is distributed*/
+        flex-basis: 30%;
+        /*Ensure the items fill the container*/
+        align-self: stretch;
+      }
+
+      .description{
+        /*set a margin and some padding*/
+        margin: 10px;
+        padding: 10px;
+
+        /*set a max width and height so that its looks nice*/
+        max-width: 400px;
+        max-height: 400px;
+
+        /*
+        * Flex Item Settings
+        *
+        *   These items are held in the #row container
+        */
+        /*set a growth factor*/
+        flex-grow: 1;
+        /*set a shrink factor*/
+        flex-shrink 1;
+        /*define how much space the item uses before distrubing the remaining space*/
+        flex-basis: 20%;
+        /*Ensure that the items start at the beginning of the space available*/
+        align-self: flex-start;
+      }
+
+      #pricing{
+        /*set a max width for less than 500px*/
+        max-width: 100%;
+
+        /*set a margin and some padding*/
+        margin: 10px;
+        padding: 10px;
+
+        /*
+        *   Flex Item settings
+        *
+        *   These items are held in the main #container
+        */
+        /*set a growth factor*/
+        flex-grow: 1;
+        /*set a shrink factor*/
+        flex-shrink 1;
+        /*define how much space to use before distrubing the remaining space*/
+        flex-basis: 100%;
+        /*Ensure that #pricing begins at the start of the space*/
+        align-self: flex-start;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   This container holds the #level flex items
+        */
+        /*turn flex box on*/
+        display: flex;
+        /*Ensure direction of flow is a row*/
+        flex-direction: row;
+        /*ensure that the wrapping is set so that when the space runs out a new row is started*/
+        flex-wrap: wrap;
+        /*Justify content with space available*/
+        justify-content: space-between;
+        /*align all flex items in the center of the container*/
+        align-items:  center;
+        /*ensure the content is aligned in the center of the container*/
+        Align-content: center;
+      }
+
+      .level{
+        /*define a background colour*/
+        background-color: #F6EBE9;
+        /*border*/
+        border: 3px;
+        border-style: solid;
+        border-color: #D9ADA5;
+        border-radius: 20px;
+        /*margin*/
+        margin: 10px;
+        padding: 10px;
+
+        /*
+        *   Flex Item settings
+        *
+        *   These items are held by the #pricing container
+        */
+        /*define a growth factor*/
+        flex-grow: 1;
+        /*define a shrinnk factor*/
+        flex-shrink 1;
+        /*define how much space to use up before distrubuting the remaining space*/
+        flex-basis: 100%;
+        /*Ensure central alignment for this item*/
+        align-self: center;
+
+        /*
+        *   Flex Box Settings
+        *
+        *   This container holds some content - see the html
+        */
+        /*Turn on flex*/
+        display: flex;
+        /*ensure flow is a column*/
+        flex-direction: column;
+        /*Try and fit everything on one line*/
+        flex-wrap: nowrap;
+        /*Justify items spacing evenely*/
+        justify-content: space-evenly;
+        /*Align all items in the container centrally*/
+        align-items:  center;
+        /*Align all content in the container centrally*/
+        Align-content: center;
+      }
     }
 
   </style>
@@ -526,12 +1011,12 @@
       <!--User story 8 - the email text box-->
       <label for="email" id="email-label">
         <!-- User Story #11 - place holder text has been added -->
-        Email:<input type="email" id="email" placeholder="Type your email address here..." required name="email">
+        Handcrafted, home-made masterpieces<br><br><input type="email" id="email" placeholder="Type your email address here..." required name="email">
       </label>
 
       <!-- User Story 11 - submit button -->
 
-      <input type="submit" id="submit">
+      <input type="submit" id="submit" value="Get started">
 
     </form>
 
@@ -574,7 +1059,7 @@
     <!--Video-->
     <div id="how-it-works">
       <!--user story 6 - the video -->
-        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        <iframe id="video"  src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           <h1> How it works</h1>
         </iframe>
       </div>
